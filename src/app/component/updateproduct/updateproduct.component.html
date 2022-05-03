@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Edit Product</h1>
+  <button type="button" class="btn btn-primary" routerLink="/products">Back</button>
+  <form [formGroup]="productForm" (ngSubmit)="submitProduct()">
+    <div *ngIf="formMessage !=''">
+      <p class="alert alert-info" role="alert">{{formMessage}}</p>
+    </div>
+    <div class="mb-3 form-group">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="name" [(ngModel)]="product.name" id="name" placeholder aria-describedby="name" required />
+
+    </div>
+    <div class="mb-3 form-group">
+      <label for="price" class="form-label">Price</label>
+      <input type="number" class="form-control" formControlName="price" [(ngModel)]="product.price" id="price" placeholder aria-describedby="price" required />
+    </div>
+    <div class="mb-3 form-group">
+      <label for="category" class="form-label">Category</label>
+      <input type="text" class="form-control" formControlName="category" [(ngModel)]="product.productCategory" id="category" placeholder aria-describedby="category" required />
+    </div>
+    <div class="mb-3 form-group">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="text" class="form-control" formControlName="quantity" [(ngModel)]="product.quantity" id="quantity" placeholder aria-describedby="quantity" required />
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+  </form>
+
+</div>
