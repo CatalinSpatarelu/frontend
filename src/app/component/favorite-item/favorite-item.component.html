@@ -1,0 +1,26 @@
+<div class="container">
+  <a class="btn btn-success" routerLink="/user">Back</a>
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of clientProductList">
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.productCategory}}</td>
+      <td>
+        <button type="button" class="btn btn-danger actions" (click)="deleteProductFromFavoriteItem(product.id)">Delete
+        </button>
+      </td>
+    </tr>
+    <!--    <a class="btn btn-success" routerLink="/newProduct">Add new product</a>-->
+    </tbody>
+  </table>
+</div>
+
+

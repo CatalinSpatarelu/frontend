@@ -1,0 +1,27 @@
+<div class="container">
+  <a class="btn btn-success" routerLink="/admin">Back</a>
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let client of clientList">
+      <td>{{client.id}}</td>
+      <td>{{client.name}}</td>
+      <td>{{client.email}}</td>
+      <td>{{client.address}}</td>
+      <td>
+<!--        <a href="#" [routerLink] = "['/product/',client.id]" class="btn btn-info actions">Details</a>-->
+        <a href="#" class="btn btn-primary actions">Edit</a>
+        <button type="button" class="btn btn-danger actions" (click)="deleteClient(client.id)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
